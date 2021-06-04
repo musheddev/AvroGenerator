@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <MyriadSdkVerboseOutput>true</MyriadSdkVerboseOutput>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Generated.fs">
+            <MyriadFile>Program.fs</MyriadFile>
+            <MyriadNameSpace>DataSchema</MyriadNameSpace>
+            <MyriadSdkVerboseOutput>true</MyriadSdkVerboseOutput>
+        </Compile>
+        <Compile Include="Program.fs" />
+
+        <Content Include="schemas\Benzinga.avsc" />
+        <Content Include="schemas\ControlMessageSchema.avsc" />
+        <Content Include="schemas\CTA-A-UF30.avsc" />
+        <Content Include="schemas\CTA-B-UF30.avsc" />
+        <Content Include="schemas\GIDS.avsc" />
+        <Content Include="schemas\MOCK.avsc" />
+        <Content Include="schemas\NewsSchema.avsc" />
+        <Content Include="schemas\NFN.avsc" />
+        <Content Include="schemas\NLSBSX.avsc" />
+        <Content Include="schemas\NLSCTA.avsc" />
+        <Content Include="schemas\NLSPSX.avsc" />
+        <Content Include="schemas\NLSUTP.avsc" />
+        <Content Include="schemas\QBBO-A-BSX.avsc" />
+        <Content Include="schemas\QBBO-A-CORE.avsc" />
+        <Content Include="schemas\QBBO-A-PSX.avsc" />
+        <Content Include="schemas\QBBO-B-BSX.avsc" />
+        <Content Include="schemas\QBBO-B-CORE.avsc" />
+        <Content Include="schemas\QBBO-B-PSX.avsc" />
+        <Content Include="schemas\QBBO-C-BSX.avsc" />
+        <Content Include="schemas\QBBO-C-CORE.avsc" />
+        <Content Include="schemas\QBBO-C-PSX.avsc" />
+        <Content Include="schemas\TOTALVIEW.avsc" />
+        <Content Include="schemas\TOTALVIEW-BSX.avsc" />
+        <Content Include="schemas\TOTALVIEW-PSX.avsc" />
+        <Content Include="schemas\UTPBIN-UF30.avsc" />
+        <Content Include="myriad.toml" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\AvroGenerator.fsproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Avro.FSharp" Version="0.4.0" />
+      <PackageReference Include="Myriad.Core" Version="0.5.3" />
+      <PackageReference Include="Myriad.Sdk" Version="0.5.3" />
+    </ItemGroup>
+    <Import Project="..\build\Myriad.Plugins.Intest.props" />
+</Project>
